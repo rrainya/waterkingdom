@@ -1,0 +1,234 @@
+/*  *******************************************************
+    폰트설정
+*******************************************************  */
+@import url('https://webfontworld.github.io/pretendard/Pretendard.css');
+
+body{font-family: 'Pretendard'; font-size: 16px; line-height: 1.5; letter-spacing: -0.02em; color: #111;}
+
+/*  *******************************************************
+    초기화
+*******************************************************  */
+body,dl,dd,figure,h1,h2,h3,p,ul{margin: 0; padding: 0;}
+address,em{font-style: normal;}
+strong{font-weight: normal;}
+ul{list-style: none;}
+img{vertical-align: top;}
+a{text-decoration: none; color: #111;}
+
+/*  *******************************************************
+    헤더레이아웃
+*******************************************************  */
+/* 공통-------------------------- */
+.container{width: 1240px; margin: 0 auto; position: relative;} 
+.main-header .container{padding-top: 20px; z-index: 1001;}
+
+.logo{text-align: center;}
+.logo img{vertical-align: top;}
+
+/* gnb-------------------------- */
+.gnb-wrap{text-align: center; margin-top: 20px; font-size: 0;}
+#gnb{display: inline-block;}
+#gnb > li{float: left; padding-bottom: 19px; position: relative;}
+#gnb > li + li{margin-left: 40px;}
+#gnb > li::before{display: block; content: ""; width: 0; height: 3px; background: #4A5FE2; position: absolute; left: 0; bottom: 0; transition-property: width; transition-duration: .3s;}
+#gnb > li:hover::before{width: 100%;}
+#gnb > li > a{display: inline-block; padding-right: 24px; font-size: 18px; font-weight: 600; line-height: 60px; position: relative;}
+#gnb > li > a::after{display: inline-block; content: ""; width: 8px; height: 8px; background: url(../img/ico_arrow.png) no-repeat 50% 50% ; position: absolute; right: 0; top: 50%; transform: translateY(-50%) rotate(0deg); transition: transform 0.3s; }
+#gnb > li > a:hover::after{transform: translateY(-50%) rotate(180deg);}
+#gnb .depth2{
+    background-color: #fff; box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); width: 184px; position: absolute; left: 50%; top: 79px; transform: translateX(-50%); border-radius: 0 0 16px 16px; padding: 32px 40px 20px 40px; white-space: nowrap;
+    /* opacity: 0; visibility: hidden; transition: 0.3s ease; */
+    display: none;
+}
+
+#gnb > li.on .depth2{
+    /* opacity: 1; visibility: visible; */
+    /* display: block; */
+}
+
+
+#gnb .depth2 li{text-align: left;}
+#gnb .depth2 li + li{margin-top: 8px;}
+#gnb .depth2 li a{font-size: 16px; font-weight: 600; letter-spacing: -0.6px;}
+#gnb .depth2 li a:hover{color: #4A5FE2;}
+
+/* util-------------------------- */
+.util-menu{position: absolute; right: 0; top: 48px; font-size: 0;}
+.util-menu a{background: url(../img/ico_login.png) no-repeat center center; display: inline-block; vertical-align: middle; text-indent: -9999px; width: 24px; height: 24px; margin-right: 16px;}
+.util-menu button{background: url(../img/ico_search.png) no-repeat center center; text-indent: -9999px; width: 24px; height: 24px; vertical-align: middle; border: 0; cursor: pointer;}
+
+/*  *******************************************************
+    swiper 메인비주얼 레이아웃
+*******************************************************  */
+#main-slide .swiper-wrapper .swiper-slide img{width: 100%;}
+#main-slide .swiper-wrapper .swiper-slide .inner{
+    position: absolute;
+    left: 50%; top: 0;
+    width: 1240px; height: 100%;
+    transform: translateX(-50%);
+}
+
+#main-slide .swiper-wrapper .swiper-slide .inner .txt-box{
+    background-color: rgba(61, 205, 73, 0.9);
+    display: inline-block;
+    padding: 60px 40px;
+    font-size: 64px; 
+    font-weight: 600;
+    position: absolute; left:0; bottom:258px;
+}
+
+#main-slide .swiper-wrapper .swiper-slide .inner .txt-box p span{
+    display: block;
+}
+
+#main-slide-wrap{position: relative;}
+
+#main-slide-wrap .swiper-pagination{
+    text-align: right;
+    width: 1240px;
+    left: 50%; 
+    transform: translateX(-50%);
+}
+
+#main-slide-wrap .swiper-pagination-bullet{
+    width: 16px; height: 16px;
+    background-color: #fff;
+    opacity: 0.8;
+}
+
+#main-slide-wrap .swiper-pagination-bullets.swiper-pagination-horizontal{
+    bottom: 30px;
+}
+
+#main-slide-wrap .swiper-pagination-bullet-active{background-color: #2E45D7;}
+
+/*  *******************************************************
+    바로가기 링크영역
+*******************************************************  */
+
+#main-slide-wrap .quick-link-wrap{
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    left: 50%; bottom: 0;
+    width: auto; height: auto;
+    padding: 20px 40px;
+    border-radius: 32px 32px 0 0;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+#main-slide-wrap .quick-link-wrap .quick-link{text-align: center;}
+#main-slide-wrap .quick-link-wrap .quick-link ul{display: inline-block;}
+#main-slide-wrap .quick-link-wrap .quick-link ul li{
+    float: left;
+    text-align: center;
+}
+
+#main-slide-wrap .quick-link-wrap .quick-link ul li + li{margin-left: 60px;}
+
+
+#main-slide-wrap .quick-link-wrap .quick-link ul li a{
+    display: block;
+}
+#main-slide-wrap .quick-link-wrap .quick-link ul li a span{}
+#main-slide-wrap .quick-link-wrap .quick-link ul li a span.ico{
+    display: inline-block;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    border: 1px solid #4A5FE2;
+    position: relative;
+}
+#main-slide-wrap .quick-link-wrap .quick-link ul li a span.ico::before{
+    content: "";
+    display: inline-block;
+    width: 60px; height: 60px;
+    background: url(../img/sprite.png) no-repeat 0 0;
+    position: absolute; left: 50%; top: 50%; 
+    transform: translate(-50% , -50%);
+   /* margin-left: -30px; margin-top: -30px; */
+}
+
+#main-slide-wrap .quick-link-wrap .quick-link ul li:nth-child(2) a span.ico::before {background-position: 0 -60px;}
+#main-slide-wrap .quick-link-wrap .quick-link ul li:nth-child(3) a span.ico::before {background-position: 0 -120px;}
+#main-slide-wrap .quick-link-wrap .quick-link ul li:nth-child(3) a span.ico::before {background-position: 0 -180px;}
+
+#main-slide-wrap .quick-link-wrap .quick-link ul li a span.txt{
+    display: block;
+}
+
+
+
+
+/*  *******************************************************
+    섹션 레이아웃
+*******************************************************  */
+/* 공통 */
+.sec .container{padding: 120px 0;}
+.sec h2{font-size: 60px; font-weight: 600; text-align: center;}
+
+/* sec-1 : 워터킹덤 즐기기 영역-------------------------- */
+.sec-1{background: url(../img/bg_01.png) no-repeat 50% 0/100% auto;}
+.sec-1 h2{margin-bottom: 40px;}
+.sec-1 .tab-menu {text-align: center; font-size: 0;}
+.sec-1 .tab-menu a {background-color: #fff; display: inline-block; width: 100px; height: 44px; line-height: 44px; border-radius: 16px 16px 0 0; border: 1px solid #BDBDBD; border-bottom: 0; box-sizing: border-box; font-weight: 600; font-size: 16px; margin-right: 8px;}
+.sec-1 .tab-menu a:last-child{margin-right: 0;}
+.sec-1 .tab-menu a.on { border-color: #4A5FE2; color: #4A5FE2;}
+.sec-1 .tab-con {width: max-content; margin: 30px auto 0 auto; }
+
+.sec-1 #tab-con2{display: none;}
+
+.sec-1 .tab-con::after{display: block; content: ""; clear: both;}
+.sec-1 .tab-con figure{float: left;}
+.sec-1 .tab-con .cont-wrap{float: left; margin-left: 60px; width: 291px;}
+.sec-1 .tab-con .cont-wrap .txt-box h3{font-size: 36px; font-weight: 600; margin-bottom: 8px;}
+.sec-1 .tab-con .cont-wrap .txt-box p{font-size: 18px; margin-bottom: 24px;}
+.sec-1 .tab-con .cont-wrap .link-box{font-size: 0;}
+.sec-1 .tab-con .cont-wrap .link-box a { display: inline-block; width: 98px; height: 38px; border-radius: 4px; text-align: center; line-height: 38px; border: 1px solid #2E45D7; background-color: #4A5FE2; color: #fff; font-size: 16px;}
+.sec-1 .tab-con .cont-wrap .link-box a + a{margin-left: 8px;}
+
+/* sec-2 : 알림소식 영역-------------------------- */
+.sec-2 h2{margin-bottom: 60px;}
+.sec-2 .cont-wrap{}
+.sec-2 .cont-wrap::after{display: block; content: ""; clear: both;}
+.sec-2 .cont-wrap .news-box{ width: 604px; float: left;}
+.sec-2 .cont-wrap .news-box li {border-bottom: 1px solid #CDCDCD;}
+.sec-2 .cont-wrap .news-box li a { display: inline-block; width: 460px; line-height: 82px; padding-left: 15px; position: relative; }
+.sec-2 .cont-wrap .news-box li a:hover { color: #4A5FE2; text-decoration: underline; }
+.sec-2 .cont-wrap .news-box li a::before { display: inline-block; content: ""; width: 6px; height: 6px; border-radius: 50%; position: absolute; left: 0; top: 50%; transform: translateY(-50%); background-color: #4A5FE2; }
+.sec-2 .cont-wrap .news-box li span.date { display: inline-block; width: 110px; line-height: 82px; text-align: right; float: right; }
+.sec-2 .cont-wrap .banner-box{width: 604px; float: right;}
+
+/* sec-3 : 운영안내 영역-------------------------- */
+.sec-3 {background: url(../img/bg_02.png) no-repeat left top ; background-size: cover; color: #fff; }
+.sec-3 .container::after { display: block; content: ""; clear: both; }
+.sec-3 h2{margin-bottom: 60px;}
+.sec-3 .col {width: 604px; height: 308px; padding-top: 60px; padding-bottom: 60px; border: 1px solid #fff; box-sizing: border-box; border-radius: 8px; position: relative;}
+.sec-3 .col h3 {font-size: 28px; font-weight: 600; text-align: center; }
+.sec-3 .col dl {position: absolute; left: 50%; top: 132px; transform: translateX(-50%); }
+.sec-3 .col dt { position: absolute; left: 0; top: 50%; transform: translateY(-50%); }
+.sec-3 .col dd{margin-left: 207px; white-space: nowrap;}
+.sec-3 .col dd span { display: inline-block; padding: 10px 20px; margin-right: 20px; border-radius: 25px; background-color: #0F1C74;}
+.sec-3 .col dd:nth-of-type(2){margin-top: 16px;}
+.sec-3 .col dd:nth-of-type(2) span{background-color: #000;}
+.sec-3 .col dd em{display: inline-block;}
+.sec-3 .col-left{float: left;}
+.sec-3 .col-right{float: right;}
+.sec-3 .col-right dl{top: 175px;}
+
+/* ================================================
+    푸터 레이아웃 
+=================================================== */
+.main-footer{background-color: #0F1C74;}
+.main-footer .container{padding-bottom: 180px;}
+
+/* 푸터 상단영역 ---------------------- */
+.main-footer .foot-top{border-bottom: 1px solid #424C93;}
+.main-footer .foot-top .foot-link{font-size: 0;}
+.main-footer .foot-top .foot-link a { display: inline-block; font-size: 16px; line-height: 64px; color: #E2E5F9; }
+.main-footer .foot-top .foot-link a + a{margin-left: 40px;}
+
+/* 푸터 하단영역 ----------------------- */
+.main-footer .foot-btm{position: relative;}
+.main-footer .foot-btm .foot-info{padding-top: 40px;}
+.main-footer .foot-btm .foot-info address{color: #7C85CA;}
+.main-footer .foot-btm .foot-info p.copy {font-size: 14px; color: #424C93; margin-top: 30px; }
+.main-footer .foot-btm .foot-logo { position: absolute; right: 0; top: 70px; }
